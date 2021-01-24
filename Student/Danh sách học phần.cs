@@ -56,7 +56,7 @@ namespace Student
                     conn = new NpgsqlConnection(connstring);
                     NpgsqlCommand cmd;
                     conn.Open();
-                    sql = "update trang_thai set trang_thai = '"+textBox2.Text+"' where ma_sv = '" + label2.Text + "' and ma_hoc_phan = @mahp";
+                    sql = "update trang_thai set trang_thai = '"+textBox2.Text+"' where ma_sv = '" + label2.Text + "' and ma_hoc_phan = @mahp and trang_thai != 'Qua'";
                     cmd = new NpgsqlCommand(sql, conn);
                     cmd.Parameters.Add("@mahp", NpgsqlTypes.NpgsqlDbType.Varchar).Value = textBox1.Text.ToUpper();
                     cmd.ExecuteNonQuery();

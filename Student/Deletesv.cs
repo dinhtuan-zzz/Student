@@ -46,7 +46,6 @@ namespace Student
                 NpgsqlConnection conn = new NpgsqlConnection(connstring);
                 NpgsqlCommand cmd;
                 conn.Open();
-
                 string sql = "delete from sinhvien where ma_sv = @masv";
                 cmd = new NpgsqlCommand(sql, conn);
                 cmd.Parameters.Add("@masv", NpgsqlTypes.NpgsqlDbType.Varchar).Value = textBox1.Text;
